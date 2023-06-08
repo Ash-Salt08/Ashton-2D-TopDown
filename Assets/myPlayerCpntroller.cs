@@ -44,6 +44,7 @@ public class myPlayerCpntroller : MonoBehaviour
 
 
     }
+
     //Collision Detect
     void OnCollisionEnter2D(Collision2D col)
     {
