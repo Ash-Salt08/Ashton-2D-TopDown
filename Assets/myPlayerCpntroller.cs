@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class myPlayerCpntroller : MonoBehaviour
@@ -11,7 +9,7 @@ public class myPlayerCpntroller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -38,10 +36,23 @@ public class myPlayerCpntroller : MonoBehaviour
             rb.AddForce(Vector2.up * speed);
         }
         //IF key "S" pressed
-        if(Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.S))
         {
             //move player down by "speed"
             rb.AddForce(Vector2.down * speed);
         }
+
+
+    }
+    //Collision Detect
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.tag == "coinPickup")
+        {
+            //Destroy objects
+            Destroy(col.gameObject);
+
+        }
+
     }
 }
